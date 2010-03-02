@@ -1,0 +1,10 @@
+{% load i18n %}
+
+{% if search_form %}
+<div id="searchbox">
+  <form method="get" action="{% url wiki_search %}">
+        {% for field in search_form %}{{ field.label }}&nbsp;{{ field }}&nbsp;&nbsp;{% endfor %}
+        <input type="submit" value="{% trans "Go" %}" accesskey="g">
+  </form>
+</div>
+{% endif %}

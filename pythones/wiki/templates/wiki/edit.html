@@ -1,0 +1,40 @@
+{% extends 'wiki/base.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Editing article" %}
+{% endblock %}
+
+{% block extrahead %}
+{% if use_tinymce %}
+    <script type="text/javascript" src="/tiny_mce/tiny_mce.js"></script>
+    <script type="text/javascript">
+        tinyMCE.init({
+            mode: "textareas",
+            theme: "simple"
+        });
+    </script>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+	<h1>{% trans "Edit" %}</h1>
+
+	<form action="" method="post">
+        {% for field in form %}
+            {{ field.errors }}
+            {% if not field.is_hidden %}
+                {% if field.field.required %}<p class="required">
+                {% else %}<p>{% endif %}
+                {{ field.label_tag }}
+            {% endif %}
+            {{ field }}
+            {% if not field.is_hidden %}</p>{% endif %}
+        {% endfor %}
+		<div class="submit">
+			<input type="submit" value="{% trans "Save" %}" />
+		</div>
+
+	</form>
+{% endblock %}
+

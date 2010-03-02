@@ -75,9 +75,20 @@ TEMPLATE_DIRS = (
 
 
 INSTALLED_APPS = (
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
     'main',
+    # WIKI https://launchpad.net/django-wikiapp
+    'wiki',
+    # WIKI DEPENDENCIES
+    'notification',
+    'tagging',
+    'template_utils',
+)
+
+WIKI_MARKUP_CHOICES = (
+    ('markdown', u'Markdown'),
 )
