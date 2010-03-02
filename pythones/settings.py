@@ -90,5 +90,6 @@ INSTALLED_APPS = (
 )
 
 WIKI_MARKUP_CHOICES = (
+    ('textile', u'Textile'),
     ('markdown', u'Markdown'),
 )
