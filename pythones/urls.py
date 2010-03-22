@@ -9,6 +9,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     (r'^$', 'main.views.index'),
     (r'^wiki/', include('wiki.urls')),
+    (r'^planet/', include('planet.urls')),
     (r'^notification/', include('notification.urls')),
     (r'^admin/', include(admin.site.urls)),
 )

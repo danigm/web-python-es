@@ -87,6 +87,8 @@ INSTALLED_APPS = (
     'notification',
     'tagging',
     'template_utils',
+    # planet
+    'planet',
 )
 
 WIKI_MARKUP_CHOICES = (

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for entry in entries %}
+    <div class="entry">
+        <h2><a href="{{ entry.link }}">{{ entry.title }}</a></h2>
+        {{ entry.html|safe }}
+        <div class="entry_info">
+            {{ entry.author }} | {{ entry.updated|timesince }}
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}
